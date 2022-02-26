@@ -24,7 +24,7 @@ def index():
     cur=conn.cursor()
     cur.execute("SELECT password FROM users where username = 'username'")
     details = cur.fetchone()
-    if password == details.password:
+    if password == details[0] 
         return redirect(url_for('images'))
 
     return render_template('index.html')
